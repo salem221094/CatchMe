@@ -23,6 +23,7 @@ get_tree(date)                    — Full activity tree JSON for a given date.
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 
@@ -213,8 +214,6 @@ def serve() -> None:
         return [TextContent(type="text", text=json.dumps(tree_data, ensure_ascii=False, indent=2))]
 
     # ── run ──────────────────────────────────────────────────────────────────
-
-    import asyncio
 
     async def _run():
         async with stdio_server() as (read_stream, write_stream):
