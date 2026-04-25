@@ -48,7 +48,7 @@ def serve() -> None:
     from mcp.server.stdio import stdio_server
     from mcp.types import TextContent, Tool
 
-    from .pipelines.retrieve import retrieve, _load_all_trees, _node_index
+    from .pipelines.retrieve import _load_all_trees, _node_index, retrieve
 
     server = Server("catchme")
 
